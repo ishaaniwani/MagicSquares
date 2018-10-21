@@ -1,3 +1,4 @@
+package magicsquare;
 // ****************************************************************
 // Square.java
 //
@@ -12,13 +13,15 @@ import java.util.Scanner;
 public class Square
 {
     int[][] square; // Matrix square, rows and columns are probably equal
+    
+    Scanner scan = new Scanner(System.in);
 
     //--------------------------------------
     //create new square of given size
     //--------------------------------------
     public Square(int size)
     {
-
+    	
     }
 
     //--------------------------------------
@@ -31,6 +34,7 @@ public class Square
         for(int col = 0; col < square[row].length; col++) { // Same row, different columns
             sumRow += square[row][col];
         }
+        
         return sumRow;
     }
 
@@ -44,6 +48,7 @@ public class Square
         for(int row = 0; row < square.length; row++) {
             sumCol += square[row][col];
         }
+        
         return sumCol;
     }
 
@@ -81,7 +86,13 @@ public class Square
     //--------------------------------------
     public boolean magic()
     {
-        
+        if(sumMainDiag() == sumOtherDiag()) {
+        	
+        	return true;
+        } else {
+        	
+        	return false;
+        }
     }
 
     //--------------------------------------
